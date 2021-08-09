@@ -2,4 +2,4 @@
 import { combineReducers } from "redux";
 import username from './username';
 
-export default combineReducers({ username });
+export default combineReducers({ username });  // later this get refer to as `rootReducer`

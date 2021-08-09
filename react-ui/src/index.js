@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 // this component is critical to connecting react with redux which we do by wrapping it around the entire app itself
 import { Provider } from "react-redux";
-// because the store we created in step 7 is default export, i.e. unnamed, we can call it anything we want but the convention is to import it as `store`
+// because the store we created in `redux/store.js` is default export, i.e. unnamed, we can call it anything we want but the convention is to import it as `store`
 import store from "./redux/store";
 import App from "./app";
 import {BrowserRouter as Router} from "react-router-dom";
@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* expose the `store` to the rest of the app */}
     <Provider store={store}>
       <Router>
         <App />
