@@ -1,10 +1,10 @@
 // create a username reducer called `username.js`
 
 // every reducer needs at least one action type, we'll create this in a step
-import { GET_USERNAME } from '../actionTypes';
+import { GET_USERNAME } from '../actionTypes'; // named import
 
 // every reducer needs an initial val, even it's empty
-const initialState = 'Anna';
+const initialState = 'Heggy'; // when redux adds this state to the store => it becomes obj
 
 // a reducer, in the simplest of terms, is nothing more than a fx that takes in the current state and values, on the `action` object, that can be used to update the current state
 function usernameReducer (state=initialState, action) {

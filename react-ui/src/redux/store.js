@@ -1,6 +1,8 @@
 // this file remains constant for any project.
+
+// named imports from `redux`
 import { applyMiddleware, compose, createStore } from "redux";
-import thunk from 'redux-thunk';
+import thunk from 'redux-thunk'; // un-named import, we will call it `thunk`, async code
 // `rootReducer` is `reducers/index.js` file that combines all reducers
 import rootReducer from './reducers';
 

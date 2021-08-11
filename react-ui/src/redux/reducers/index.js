@@ -2,4 +2,5 @@
 import { combineReducers } from "redux";
 import username from './username';
 
+// username : username, key : value pair but short hand
 export default combineReducers({ username });  // later this get refer to as `rootReducer`
