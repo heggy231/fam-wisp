@@ -15,3 +15,5 @@ redux
 .reduce fx in js - job is to take pieces passed in and output something new.  
 
 - asks us for our name - then adds that name to the header.
+
+- mapStateToProps(https://youtu.be/oONNusd57PU?t=7268)
