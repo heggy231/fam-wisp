@@ -1,11 +1,11 @@
-// for form in react you must get `useState`
-import { useState } from "react";
+// a controlled-state form in react needs to use `useState`
+//  for component level
 
-const UserNameForm = () => {
-  // why we need useState hook for form?
-  //  b/c form is controlled component which needs state
-  //  hmtl gives it to us by default -
-  const [username, setUsername] = useState("JooAh");
+// for app wide storage we use connect to maptStateToProps
+import { useState } from "react";
+import { connect } from "react-redux";
+
+const UserNameForm = ({ username }) => {
 
   const handleChange = (e) => {
     setUsername(e.target.value);
@@ -14,4 +14,18 @@ const UserNameForm = () => {
   return <input onChange={handleChange} value={username} />;
 };
 
-export default UserNameForm;
+// to read a value from store
+const mapStateToProps = (state) => ({
+  // map what is in store => props so we can use it
+  username: state.username,
+});
+
+// to write a value from state
+const mapDispatchToProps = (dispatch) => ({
+  updateUsername: (username) => dispatch(updateUsername(username)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserNameForm);
+
+// if only writing with no reading you must pass in `null` as first arg
+// export default connect(null, mapDispatchToProps)(UserNameForm);

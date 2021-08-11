@@ -11,6 +11,7 @@ const Greeting = ({ username }) => {
   );
 };
 
+// to read the value from the store
 const mapStateToProps = (state) => ({
   // map whatever it is in the store (state)
   //  we want to map it to props

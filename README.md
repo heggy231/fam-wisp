@@ -7,4 +7,5 @@ My code: https://github.com/heggy231/fam-wisp
 - express-session: for session ID cookie
 
 - Jung WooJin
+Jung JiOh
 - Im SooAh
