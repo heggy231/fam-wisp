@@ -1,14 +1,13 @@
 import { GET_USERNAME } from "./actionTypes";
 
 export const updateUsername = (username) => {
+  // console.log(username);
   return {
-    // every action creator must return an action type
     type: GET_USERNAME,
-    // it's convention to return values on a `payload` obj but this is not a strict requirement
     payload: {
-      username,
-    },
-  };
+      username
+    }
+  }
 };
 
 // an action creator is name is a misnomer (misleading name), since its purpose is to fire an action that already exists, not create a new one from scratch

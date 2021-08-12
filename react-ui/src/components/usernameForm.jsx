@@ -2,13 +2,15 @@
 //  for component level
 
 // for app wide storage we use connect to maptStateToProps
-import { useState } from "react";
 import { connect } from "react-redux";
+import { updateUsername } from "../redux/actions";
 
-const UserNameForm = ({ username }) => {
-
+const UserNameForm = ({ updateUsername, username }) => {
   const handleChange = (e) => {
-    setUsername(e.target.value);
+    const username = e.target.value;
+    // setUsername(e.target.value);
+    // when value username form changed => fire off updateUsername fx
+    updateUsername(username);
   };
 
   return <input onChange={handleChange} value={username} />;
@@ -22,6 +24,7 @@ const mapStateToProps = (state) => ({
 
 // to write a value from state
 const mapDispatchToProps = (dispatch) => ({
+  // right handside updateUsername action is defined in redux/actions
   updateUsername: (username) => dispatch(updateUsername(username)),
 });
 
